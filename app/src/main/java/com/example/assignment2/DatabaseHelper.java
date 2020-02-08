@@ -166,7 +166,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         SQLiteDatabase db=this.getWritableDatabase();
 
         ContentValues values = new ContentValues();
-        values.put(ASS_ROW1, ass.getId());
+        //values.put(ASS_ROW1, ass.getId());
         values.put(ASS_ROW2,ass.getCourseid());
         values.put(ASS_ROW3,ass.getName());
         values.put(ASS_ROW4,ass.getGrade());
@@ -177,6 +177,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return ass_id;
 
     }
+
+
 
 
 
@@ -204,8 +206,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
 
-    public List<AssignmentClass> getAllASSbyTAG(String course_id){
-        List<AssignmentClass> asses = new ArrayList<AssignmentClass>();
+    public ArrayList<AssignmentClass> getAllASSbyTAG(String course_id){
+        ArrayList<AssignmentClass> asses = new ArrayList<AssignmentClass>();
         String selectQuery = "SELECT  * FROM "+ TABLE_ASS_NAME +
                 " WHERE "+ ASS_ROW2+" = '"+course_id+"'";
         Log.e("DB LOG", selectQuery );

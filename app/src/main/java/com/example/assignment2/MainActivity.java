@@ -3,9 +3,12 @@ package com.example.assignment2;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.provider.ContactsContract;
+import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
 
@@ -18,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
     protected FloatingActionButton button;
     protected ListView listView;
     protected DatabaseHelper db;
+    protected MainListviewAdapter adapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -48,8 +52,9 @@ public class MainActivity extends AppCompatActivity {
 
 
         //set up adapter
-        MainListviewAdapter adapter = new MainListviewAdapter(this,courses);
+        adapter = new MainListviewAdapter(this,courses);
         listView.setAdapter(adapter);
+
 
 
 
@@ -59,6 +64,22 @@ public class MainActivity extends AppCompatActivity {
         myDialogClass myDialog = new myDialogClass();
         myDialog.show(manager,"CourseAddDialog");
 
+
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        Log.d("RESUMED", "onResume: ");
+        ArrayList<CoursesClass> courses = new ArrayList<>(); // this array will hold our courses
+
+        for(int i = 1; i<=db.getCOURSEcount();i++)
+        {
+            courses.add(db.getCOURSE(i));
+
+        }
+        adapter = new MainListviewAdapter(this,courses);
+        listView.setAdapter(adapter);
 
     }
 }

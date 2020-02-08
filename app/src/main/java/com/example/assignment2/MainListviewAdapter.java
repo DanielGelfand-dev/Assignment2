@@ -1,6 +1,7 @@
 package com.example.assignment2;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -37,9 +38,10 @@ public class MainListviewAdapter extends BaseAdapter {
         return position;
     }
 
+
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-
+       final int position2= position;
         convertView = LayoutInflater.from(con).inflate(R.layout.listview_courses_layout,parent,false);
 
         //TextView num = convertView.findViewById(R.id.);
@@ -51,6 +53,16 @@ public class MainListviewAdapter extends BaseAdapter {
         coursename.setText(array.get(position).getTitle());
         coursecode.setText(array.get(position).getCode());
      //   average.setText((array.get(position).getAverage()));
+
+        convertView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = new Intent(con,assignmentActivity.class);
+                intent.putExtra("CourseID",position2);
+                con.startActivity(intent);
+            }
+        });
 
 
 
