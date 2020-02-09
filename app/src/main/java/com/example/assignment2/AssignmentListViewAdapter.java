@@ -44,11 +44,11 @@ public class AssignmentListViewAdapter extends BaseAdapter {
         //TextView num = convertView.findViewById(R.id.);
         TextView assignmentname = convertView.findViewById(R.id.textview_ass_name);
         TextView assignmentgrade = convertView.findViewById((R.id.textview_ass_grade));
-       // TextView average = convertView.findViewById(R.id.textview_course_average);
+        // TextView average = convertView.findViewById(R.id.textview_course_average);
 
         // set data into textview...
         assignmentname.setText(array.get(position).getName());
-        assignmentgrade.setText(array.get(position).getGrade()+" %");
+        assignmentgrade.setText(array.get(position).getGrade() + " %");
         //   average.setText((array.get(position).getAverage()));
 
 //        convertView.setOnClickListener(new View.OnClickListener() {

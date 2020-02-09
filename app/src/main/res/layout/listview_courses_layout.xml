@@ -6,24 +6,35 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:baselineAligned="false"
+    android:clickable="true"
+    android:descendantFocusability="blocksDescendants"
     android:orientation="vertical">
 
     <TextView
         android:id="@+id/textview_course_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:descendantFocusability="blocksDescendants"
+        android:textIsSelectable="false"
+        android:focusable="false"/>
         android:text="TextView" />
 
     <TextView
         android:id="@+id/textview_course_code"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:descendantFocusability="blocksDescendants"
+        android:textIsSelectable="false"
+        android:focusable="false"/>
         android:text="TextView" />
 
     <TextView
         android:id="@+id/textview_course_average"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:descendantFocusability="blocksDescendants"
+        android:textIsSelectable="false"
+        android:focusable="false"/>
         android:text="TextView" />
 
 </LinearLayout>

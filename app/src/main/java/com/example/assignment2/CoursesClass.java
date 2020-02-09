@@ -3,24 +3,31 @@ package com.example.assignment2;
 public class CoursesClass {
 
     int id;
+
     String title;
     String code;
     int average;
+
+
+    public CoursesClass() {
+    }
+
+    ;
+
+    public CoursesClass(int id, String title, String code, int average) {
+        this.id = id;
+
+        this.title = title;
+        this.code = code;
+        this.average = average;
+    }
+
 
     public int getAverage() {
         return average;
     }
 
     public void setAverage(int average) {
-        this.average = average;
-    }
-
-    public CoursesClass(){};
-
-    public CoursesClass(int id, String title, String code,int average) {
-        this.id = id;
-        this.title = title;
-        this.code = code;
         this.average = average;
     }
 

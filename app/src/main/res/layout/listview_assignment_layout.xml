@@ -7,11 +7,13 @@
         android:id="@+id/textview_ass_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textIsSelectable="false"
         android:text="TextView" />
 
     <TextView
         android:id="@+id/textview_ass_grade"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textIsSelectable="false"
         android:text="TextView" />
 </LinearLayout>

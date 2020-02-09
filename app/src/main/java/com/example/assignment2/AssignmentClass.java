@@ -6,7 +6,11 @@ public class AssignmentClass {
     int courseid;
     String name;
     int grade;
-    public AssignmentClass(){};
+
+    public AssignmentClass() {
+    }
+
+    ;
 
     public AssignmentClass(int id, int courseid, String name, int grade) {
         this.id = id;
